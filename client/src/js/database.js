@@ -15,7 +15,7 @@ const initdb = async () =>
 // TODO: Add logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => 
 {
-  console.error('PUT to the database');
+  console.log('PUT to the database');
   // Create connection to the database
   const jateDb = await openDB('jate', 1);
   // Create a transaction on the database
@@ -32,7 +32,7 @@ export const putDb = async (content) =>
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => 
 {
-  console.error('GET from the database');
+  console.log('GET from the database');
   // Create connection to the database
   const jateDb = await openDB('jate', 1);
   // Create a transaction on the database
@@ -44,7 +44,7 @@ export const getDb = async () =>
   //Confirm the request was successful
   const result = await request;
   console.log('Data retrieved from the database', result);
-  return result;
+  return result?.value;
 };
 
 initdb();
